@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var timerSet: RoundButtonViewModel?
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            if timerSet == nil {
+                GridView(timerSet: $timerSet)
+            } else {
+                CountDownView(timerSet: $timerSet)
+            }
+        }
     }
 }
 

@@ -13,6 +13,18 @@
 		61C0427128CF261A00D58BFA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0425F28CF261800D58BFA /* ContentView.swift */; };
 		61C0427228CF261A00D58BFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61C0426028CF261A00D58BFA /* Assets.xcassets */; };
 		61C0427328CF261A00D58BFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61C0426028CF261A00D58BFA /* Assets.xcassets */; };
+		61C0427D28CF264B00D58BFA /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0427C28CF264B00D58BFA /* GridView.swift */; };
+		61C0427E28CF264B00D58BFA /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0427C28CF264B00D58BFA /* GridView.swift */; };
+		61C0428428CF269000D58BFA /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0427F28CF269000D58BFA /* RoundButton.swift */; };
+		61C0428528CF269000D58BFA /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0427F28CF269000D58BFA /* RoundButton.swift */; };
+		61C0428628CF269000D58BFA /* RoundButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0428028CF269000D58BFA /* RoundButtonViewModel.swift */; };
+		61C0428728CF269000D58BFA /* RoundButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0428028CF269000D58BFA /* RoundButtonViewModel.swift */; };
+		61C0428828CF269000D58BFA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61C0428128CF269000D58BFA /* Colors.xcassets */; };
+		61C0428928CF269000D58BFA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61C0428128CF269000D58BFA /* Colors.xcassets */; };
+		61C0428A28CF269000D58BFA /* RoundButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0428228CF269000D58BFA /* RoundButtonStyle.swift */; };
+		61C0428B28CF269000D58BFA /* RoundButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0428228CF269000D58BFA /* RoundButtonStyle.swift */; };
+		61C0428C28CF269000D58BFA /* CountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0428328CF269000D58BFA /* CountDownView.swift */; };
+		61C0428D28CF269000D58BFA /* CountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0428328CF269000D58BFA /* CountDownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +34,12 @@
 		61C0426528CF261A00D58BFA /* TickTock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TickTock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C0426B28CF261A00D58BFA /* TickTock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TickTock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C0426D28CF261A00D58BFA /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		61C0427C28CF264B00D58BFA /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		61C0427F28CF269000D58BFA /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		61C0428028CF269000D58BFA /* RoundButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButtonViewModel.swift; sourceTree = "<group>"; };
+		61C0428128CF269000D58BFA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		61C0428228CF269000D58BFA /* RoundButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButtonStyle.swift; sourceTree = "<group>"; };
+		61C0428328CF269000D58BFA /* CountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +72,15 @@
 		61C0425D28CF261800D58BFA /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				61C0426028CF261A00D58BFA /* Assets.xcassets */,
+				61C0428128CF269000D58BFA /* Colors.xcassets */,
 				61C0425E28CF261800D58BFA /* TickTockApp.swift */,
 				61C0425F28CF261800D58BFA /* ContentView.swift */,
-				61C0426028CF261A00D58BFA /* Assets.xcassets */,
+				61C0427C28CF264B00D58BFA /* GridView.swift */,
+				61C0428328CF269000D58BFA /* CountDownView.swift */,
+				61C0427F28CF269000D58BFA /* RoundButton.swift */,
+				61C0428228CF269000D58BFA /* RoundButtonStyle.swift */,
+				61C0428028CF269000D58BFA /* RoundButtonViewModel.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -158,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61C0427228CF261A00D58BFA /* Assets.xcassets in Resources */,
+				61C0428828CF269000D58BFA /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61C0427328CF261A00D58BFA /* Assets.xcassets in Resources */,
+				61C0428928CF269000D58BFA /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +202,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61C0428C28CF269000D58BFA /* CountDownView.swift in Sources */,
+				61C0428A28CF269000D58BFA /* RoundButtonStyle.swift in Sources */,
+				61C0428628CF269000D58BFA /* RoundButtonViewModel.swift in Sources */,
+				61C0428428CF269000D58BFA /* RoundButton.swift in Sources */,
 				61C0427028CF261A00D58BFA /* ContentView.swift in Sources */,
+				61C0427D28CF264B00D58BFA /* GridView.swift in Sources */,
 				61C0426E28CF261A00D58BFA /* TickTockApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,7 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61C0428D28CF269000D58BFA /* CountDownView.swift in Sources */,
+				61C0428B28CF269000D58BFA /* RoundButtonStyle.swift in Sources */,
+				61C0428728CF269000D58BFA /* RoundButtonViewModel.swift in Sources */,
+				61C0428528CF269000D58BFA /* RoundButton.swift in Sources */,
 				61C0427128CF261A00D58BFA /* ContentView.swift in Sources */,
+				61C0427E28CF264B00D58BFA /* GridView.swift in Sources */,
 				61C0426F28CF261A00D58BFA /* TickTockApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
