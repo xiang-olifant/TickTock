@@ -11,6 +11,7 @@ public struct CountDownView: View {
     @Binding var timerSet: TimeIntervalModel?
     var viewModel: TimeIntervalModel
     @State var timeRemaining: TimeInterval?
+    @State var color: Color
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -18,29 +19,39 @@ public struct CountDownView: View {
         _timerSet = timerSet
         viewModel = timerSet.wrappedValue ?? .init(timeInterval: 0)!
         _timeRemaining = .init(wrappedValue: timerSet.wrappedValue?.timeInterval)
+        _color = .init(initialValue: timerSet.wrappedValue?.timeInterval == nil ?
+                       Color.randonMyColor : .init(myColorDescription: viewModel.color))
     }
     
     public var body: some View {
-        return VStack {
-            Spacer()
+        return ZStack {
+            color.ignoresSafeArea()
             
-            Text(timeRemaining?.timeString ?? "DONE")
-                .font(.title)
-                .fontWeight(.bold)
-                .onReceive(timer) { time in
-                    if timeRemaining ?? 0 > 1 {
-                        timeRemaining! -= 1
-                    } else {
-                        timeRemaining = nil
+            VStack {
+                Spacer()
+                
+                Text(timeRemaining?.timeString ?? "DONE")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .onReceive(timer) { time in
+                        if timeRemaining ?? 0 > 1 {
+                            timeRemaining! -= 1
+                        } else {
+                            color = .randonMyColor
+                            timeRemaining = nil
+                        }
                     }
-                }
-            Spacer()
-            
-            Button("Back", action: { timerSet = nil })
-                .padding([.bottom], 40)
+                Spacer()
+                
+                Button("Back", action: { timerSet = nil })
+                    .padding([.bottom], 40)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(timeRemaining == nil ? Color.randonMyColor : .init(myColorDescription: viewModel.color))
+    }
+    
+    var backgroundColor: Color {
+        timeRemaining == nil ? Color.randonMyColor : .init(myColorDescription: viewModel.color)
     }
 }
 
