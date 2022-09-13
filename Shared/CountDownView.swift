@@ -8,15 +8,15 @@
 import SwiftUI
 
 public struct CountDownView: View {
-    @Binding var timerSet: RoundButtonViewModel?
-    var viewModel: RoundButtonViewModel
+    @Binding var timerSet: TimeIntervalModel?
+    var viewModel: TimeIntervalModel
     @State var timeRemaining: TimeInterval?
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
-    public init(timerSet: Binding<RoundButtonViewModel?>) {
+    public init(timerSet: Binding<TimeIntervalModel?>) {
         _timerSet = timerSet
-        viewModel = timerSet.wrappedValue ?? .init(timeInterval: 0, buttonSize: 200)!
+        viewModel = timerSet.wrappedValue ?? .init(timeInterval: 0)!
         _timeRemaining = .init(wrappedValue: timerSet.wrappedValue?.timeInterval)
     }
     
@@ -40,7 +40,7 @@ public struct CountDownView: View {
                 .padding([.bottom], 40)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(timeRemaining == nil ? Color.randonMyColor : viewModel.color)
+        .background(timeRemaining == nil ? Color.randonMyColor : .init(myColorDescription: viewModel.color))
     }
 }
 

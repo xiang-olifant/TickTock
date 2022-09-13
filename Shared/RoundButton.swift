@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 public struct RoundButton: View {
-    @Binding var timerSet: RoundButtonViewModel?
-    var viewModel: RoundButtonViewModel
+    @Binding var timerSet: TimeIntervalModel?
+    var viewModel: TimeIntervalModel
     
     public var body: some View {
         Button(action: {
@@ -21,6 +21,6 @@ public struct RoundButton: View {
                 .font(.title3)
         }
         .frame(width: viewModel.buttonSize, height: viewModel.buttonSize)
-        .buttonStyle(RoundButtonStyle(viewModel.color))
+        .buttonStyle(RoundButtonStyle(.init(myColorDescription: viewModel.color)))
     }
 }

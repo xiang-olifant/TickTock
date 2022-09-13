@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var timerSet: RoundButtonViewModel?
+    @State var timerSet: TimeIntervalModel?
     
     var body: some View {
         VStack {
             if timerSet == nil {
-                GridView(timerSet: $timerSet)
+                GridView(timerSet: $timerSet, timeIntervalRepo: TimeIntervalRepository())
             } else {
                 CountDownView(timerSet: $timerSet)
             }

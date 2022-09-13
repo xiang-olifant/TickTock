@@ -14,26 +14,27 @@ extension TimeInterval {
     }
 }
 
-public class RoundButtonViewModel: Hashable {
+public class TimeIntervalModel: Hashable, Codable {
     var timeInterval: TimeInterval
-    var buttonSize: CGFloat
-    var color: Color
+    var color: String
+    var id: String
     
-    var id: UUID
-    
-    init?(timeInterval: TimeInterval, buttonSize: CGFloat, color: Color? = nil) {
+    init?(timeInterval: TimeInterval, color: Color? = nil) {
         self.timeInterval = timeInterval
-        self.buttonSize = buttonSize
-        self.color = color ?? .randonMyColor
+        self.color = color?.myColorDescription ?? Color.randonMyColor.myColorDescription
         guard timeInterval.timeString != nil else { return nil }
-        self.id = UUID()
+        self.id = UUID().uuidString
     }
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
     
-    public static func == (lhs: RoundButtonViewModel, rhs: RoundButtonViewModel) -> Bool {
+    public static func == (lhs: TimeIntervalModel, rhs: TimeIntervalModel) -> Bool {
         lhs.id == rhs.id
     }
+}
+
+extension TimeIntervalModel {
+    var buttonSize: CGFloat { 200 }
 }
